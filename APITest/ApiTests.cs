@@ -37,79 +37,10 @@ public class Tests
     }
     
 
+
+    [Ignore("This is just a test that can be used to see if your test container is set up correctly")]
     [Test]
-    public async Task JustMakingSureTestContainerIsWorking()
-    {
-        // Arrange
-        var order = new Order
-        {
-            CustomerName = "Josue",
-            OrderDate = DateTime.UtcNow,
-            OrderDetails = new List<OrderDetail>
-            {
-                new OrderDetail
-                {
-                    ProductName = "Keyboard",
-                    Quantity = 2
-                }
-            }
-        };
-
-        // Act
-        await DbContext.Orders.AddAsync(order);
-        await DbContext.SaveChangesAsync();
-
-        // Assert
-        /*var orderList = await DbContext.Orders
-            .Include(o => o.OrderDetails)
-            .ToListAsync();*/
-
-        var orderList = await orderControler.GetOrder("Josue");
-        
-        Assert.That(orderList, Is.Not.Null);
-
-        /*Assert.That(orderList.Count, Is.EqualTo(1));
-        Assert.That(orderList.First().OrderDetails.Count, Is.EqualTo(1));*/
-    }
-    
-    
-    [Test]
-    public async Task JustMakingSureTestContainerIsWorking2()
-    {
-        // Arrange
-        var order = new Order
-        {
-            CustomerName = "Josue",
-            OrderDate = DateTime.UtcNow,
-            OrderDetails = new List<OrderDetail>
-            {
-                new OrderDetail
-                {
-                    ProductName = "Keyboard",
-                    Quantity = 2
-                }
-            }
-        };
-
-        await DbContext.Orders.AddAsync(order);
-        await DbContext.SaveChangesAsync();
-
-        var controller = new OrderController(DbContext);
-
-        // Act
-        var result = await controller.GetOrder("Josue");
-
-        order = result.Value;
-
-        // Assert
-
-        Assert.That(order, Is.Not.Null);
-        Assert.That(order.CustomerName, Is.EqualTo("Josue"));
-    }
-
-    [Ignore("Ignoring")]
-    [Test]
-    public async Task JustMakingSureTestContainerIsWorking3()
+    public async Task Infrastructure_ShouldConnectToDatabaseContainer()
     {
         // Arrange
         var order = new Order
@@ -143,7 +74,6 @@ public class Tests
         
         
     }
-    
     
     
     [Test]
