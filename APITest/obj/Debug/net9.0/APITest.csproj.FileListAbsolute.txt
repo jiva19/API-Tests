@@ -469,3 +469,4 @@
 /Users/josuevelasco/Personal Projects/TestingProjectExample/APITest/bin/Debug/net9.0/runtimes/win/lib/net9.0/System.Diagnostics.EventLog.dll
 /Users/josuevelasco/Personal Projects/TestingProjectExample/APITest/obj/Debug/net9.0/MvcTestingAppManifest.json
 /Users/josuevelasco/Personal Projects/TestingProjectExample/APITest/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/josuevelasco/Personal Projects/TestingProjectExample/APITest/obj/Debug/net9.0/APITest.sourcelink.json
