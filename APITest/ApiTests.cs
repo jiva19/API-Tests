@@ -74,7 +74,7 @@
             await DbContext.Orders.AddAsync(order);
             await DbContext.SaveChangesAsync();
 
-            var client = new RestClient("http://localhost:5195"); // <-- change to your port
+            var client = new RestClient("http://localhost:5195");
             var request = new RestRequest("/order/Josue", Method.Get);
 
             // Act
